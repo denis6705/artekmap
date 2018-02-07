@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Карта Артека</title>
+</head>
+<body>
+   <canvas id="canvas" width="1600" height="900"> </canvas>
+   <script src="/static/js/script.js" >
+   </script>
+</body>
+</html>
