@@ -15,15 +15,21 @@
 	red.src = "/static/img/red.png";
 	green = new Image();
 	green.src = "/static/img/green.png";
-	map.onload = function()
+	//map.onload = function()
+	setInterval(function()
 	{
 		ctx.drawImage(map,0,0,4096,2160);
-		ctx.drawImage(red,1209,400,30,30);
-		ctx.drawImage(green,820,414,30,30);
-	}
-	%for key in pings:
-		console.log("{{key}}" + ":" + {{pings[key]}});
-	%end
+		
+		%for k in pings:
+			%if pings[k][0] == -1:
+				ctx.drawImage(red,{{pings[k][1]}},{{pings[k][2]}},30,30)
+			%end
+			%if pings[k][0] != -1:
+				ctx.drawImage(green,{{pings[k][1]}},{{pings[k][2]}},30,30)
+			%end
+		%end
+		
+	}, 5000);
 		
 }
    </script>
